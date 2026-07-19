@@ -390,7 +390,7 @@ elif page == "About Project":
     - **Dashboard**: Streamlit, Plotly
     
     ### 👨‍💻 Developer & Authorship:
-    - **Author**: Data Science Student
-    - **GitHub**: [GitHub Repository Placeholder](https://github.com/)
-    - **LinkedIn**: [LinkedIn Profile Placeholder](https://linkedin.com/)
+    - **Author**: Het Kikani
+    - **GitHub**: [Customer Churn Predictor Repository](https://github.com/Hetk8406/Customer-Churn-Predictor-REST-API)
+    - **LinkedIn**: [Het Kikani Profile](https://www.linkedin.com/in/het-kikani-67817236b/)
     """)
