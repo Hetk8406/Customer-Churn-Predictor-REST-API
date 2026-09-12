@@ -1,6 +1,6 @@
 # Customer Churn Predictor using RFM, XGBoost & FastAPI
 
-This repository contains a complete end-to-end Machine Learning pipeline to predict customer churn for an e-commerce retailer. Using the transaction-level **Online Retail II** dataset, we clean the transactions, engineer customer-level behavioral features using **RFM (Recency, Frequency, Monetary)** analysis, train and evaluate machine learning models (including XGBoost), explain predictions globally and locally using **SHAP**, and expose the model through a production-ready **FastAPI** service.
+This repository contains a complete end-to-end Machine Learning pipeline to predict customer churn for an e-commerce retailer. Using the transaction-level **Online Retail II** dataset, we clean the transactions, engineer customer-level behavioral features using **RFM (Recency, Frequency, Monetary)** analysis, train and evaluate machine learning models (including XGBoost), explain predictions globally and locally using **SHAP**, and expose the model through a production-ready **FastAPI** service and **Streamlit** dashboard.
 
 ---
 
@@ -24,7 +24,7 @@ In e-commerce, customers do not "cancel" a subscription; they simply stop purcha
 5. **Target Labeling**: Define Churn (1) for customers with >90 days of inactivity.
 6. **Model Training**: Establish baselines (Logistic Regression, Decision Tree, Random Forest) and train XGBoost.
 7. **SHAP Explanations**: Extract game-theoretic feature importance and dependency plots.
-8. **Deployment**: Wrap the champion model in a robust FastAPI application.
+8. **Deployment**: Wrap the champion model in a robust FastAPI application and Streamlit Dashboard.
 
 ---
 
@@ -33,7 +33,7 @@ In e-commerce, customers do not "cancel" a subscription; they simply stop purcha
 - **Machine Learning**: Scikit-learn, XGBoost
 - **Explainability**: SHAP (SHapley Additive exPlanations)
 - **REST API**: FastAPI, Uvicorn, Pydantic
-- **Dashboard**: Streamlit (Ready to connect)
+- **Dashboard**: Streamlit, Plotly
 
 ---
 
@@ -45,13 +45,42 @@ In e-commerce, customers do not "cancel" a subscription; they simply stop purcha
 │   ├── utils.py                # Model Loader & Feature Formatter
 │   ├── model.joblib            # Trained XGBoost Champion Model
 │   └── requirements.txt        # API dependencies
+├── Customer Churn Analytics/   # Dashboard UI Screenshots
+│   ├── CCA-1.png ... CCA-9.png
 ├── data/
 │   └── online_retail_II.xlsx   # Raw Excel Dataset (if available)
 ├── customer_churn_predictor.ipynb  # End-to-End Notebook
 ├── customer_churn_dataset.csv  # Processed Customer-Level Dataset
+├── dashboard.py                # Streamlit Analytics Dashboard
 ├── online_retail_II.csv        # Combined Transaction Dataset
+├── INTERVIEW_PREP.md           # 20 Deep-Dive Interview Q&As
 └── README.md                   # Project Documentation
 ```
+
+---
+
+## 🖼️ Dashboard Screenshots
+
+### 1. Executive Overview & Key Performance Indicators
+![Overview 1](Customer%20Churn%20Analytics/CCA-1.png)
+![Overview 2](Customer%20Churn%20Analytics/CCA-2.png)
+
+### 2. Exploratory Data Analysis (EDA)
+![EDA Trends](Customer%20Churn%20Analytics/CCA-3.png)
+![EDA Distribution](Customer%20Churn%20Analytics/CCA-4.png)
+
+### 3. RFM Analysis & Correlation Matrix
+![RFM Metrics](Customer%20Churn%20Analytics/CCA-5.png)
+![Correlation Heatmap](Customer%20Churn%20Analytics/CCA-6.png)
+
+### 4. Model Performance & Feature Importance
+![Model Performance & Feature Importance](Customer%20Churn%20Analytics/CCA-7.png)
+
+### 5. Interactive Customer Churn Predictor
+![Customer Prediction Form](Customer%20Churn%20Analytics/CCA-8.png)
+
+### 6. Business Insights & Retention Strategy
+![Business Strategy & Insights](Customer%20Churn%20Analytics/CCA-9.png)
 
 ---
 
@@ -127,7 +156,7 @@ streamlit run dashboard.py
 ---
 
 ## 🖥️ Dashboard Features
-The FastAPI app is designed to seamlessly feed back-end predictions to a front-end **Streamlit** dashboard (or similar client application):
+The Streamlit dashboard (`dashboard.py`) provides an interactive interface for stakeholders:
 1. **Customer Search**: Query by ID to pull up active/churn predictions.
 2. **Probability Gauges**: Ring charts mapping churn risk.
 3. **Local Explanations**: Streamlit rendering of SHAP waterfall values to explain the prediction to marketing teams.
@@ -143,7 +172,7 @@ The FastAPI app is designed to seamlessly feed back-end predictions to a front-e
    pip install -r api/requirements.txt
    ```
 4. Place the dataset `online_retail_II.csv` in the root folder.
-5. Run the notebook or start the FastAPI application immediately!
+5. Run the notebook or start the Streamlit application immediately!
 
 ---
 
